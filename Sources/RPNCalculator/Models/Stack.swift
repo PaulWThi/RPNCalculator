@@ -19,7 +19,6 @@ extension Stackable {
     var isEmpty: Bool { peek() == nil }
 }
 
-
 // MARK: - Stack
 struct Stack<Element>: Stackable where Element: Equatable {
     private var storage = [Element]()
