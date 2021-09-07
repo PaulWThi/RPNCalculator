@@ -14,7 +14,7 @@ To be able to correctly build and run this application, the following tools must
 
 #### Xcode
 
-Xcode is Apple's integrated development environment for macOS. Though we technically don't have to use it to run the code, Xcode comes with some **required** libraries to build the this Command Line Application. This project uses the latest version of [Xcode](https://developer.apple.com/xcode/resources/).
+Xcode is Apple's integrated development environment for macOS. Though we technically don't have to use it to run the code, Xcode comes with some **required** libraries to build this Command Line Application. This project uses the latest version of [Xcode](https://developer.apple.com/xcode/resources/).
 
 #### Xcode Command Line Tools (Xcode-select)
 
@@ -50,16 +50,16 @@ Folder structure separates model objects and utility classes/functions
 
 ## Application Architecture / Solution
 
-The application starts at `main.swift`. It creates an instance of `Runner` and calls its `start()` function. The entire application is driven by `Runner` and it's functions.
+The application starts at `main.swift`. It creates an instance of `Runner` and calls its `start()` function. The entire application is driven by `Runner` and its functions.
 
-Input types are broken in to 2 different types, operands and operators. Operands are integer numbers, and operators are a preset enumeration of raw type String. User inputs are first checked to see if they are of a preset command ("eof", "show", "count"), then they will be checked to see if they are an operand or operator. If they are an operand, they will be added on top of an operand stack to be operated on in the future. If they are an operator, then the top 2 operands of the stack will be calculated against the operator, and once calculated, pushed back on top of the stack.
+Input types are broken into 2 different types, operands and operators. Operands are integer numbers, and operators are a preset enumeration of raw type String. User inputs are first checked to see if they are of a preset command ("eof", "show", "count"), then they will be checked to see if they are an operand or operator. If they are an operand, they will be added on top of an operand stack to be operated on in the future. If they are an operator, then the top 2 operands of the stack will be calculated against the operator, and once calculated, pushed back on top of the stack.
 
 The purpose for this architecture is to allow for vague inputs so that the application can be scaled up easily. By having operators in an enumeration (and possibly operands in the future), it will be easy to add new operations if need be.
 
 
 ## Tradeoffs / Left Out / What Would I Do Differently
 
-Though it was technically possible, I do not think Swift was the ideal language to build this application. Swift is optimized for iOS development and not so much for building CLI Applications. This was done mainly as a proof of concept and for fun. Also, I was unable to figure out how to correctly implement Unit Tests (I'm not even entirely sure if it's possible). Though this is a code challenge, I will probably be looking in to figuring out how to do it in the future.
+Though it was technically possible, I do not think Swift was the ideal language to build this application. Swift is optimized for iOS development and not so much for building CLI Applications. This was done mainly as a proof of concept and for fun. Also, I was unable to figure out how to correctly implement Unit Tests (I'm not even entirely sure if it's possible). Though this is a code challenge, I will probably be looking into figuring out how to do it in the future.
 
 
 ## How To Build / Run
@@ -180,3 +180,5 @@ otherwise, go to this next step to check if your Xcode and Xcode-select is insta
 ```bash
 swift run rpn
 ```
+
+
